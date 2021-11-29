@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+/*CUSTOM COLORS*/
+
+:root{
+    --light: #FDFDFD;
+    --dark: #181818;
+    --yellow: #FDE441;
+    --red-light: #FFB59E;
+    --blue-light: #D6EBFF;
+    --green-light: #CEFDDB
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+body{
+    background-color: var(--light);
+    color: var(--dark);
+}
+.App{
+    padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.Header{
+    /*border: 2px solid #181818;*/
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Main{
+    /*border: 2px solid #181818;*/
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.Footer{
+    /*border: 2px solid #181818;*/
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.Rating{
+    border: 2px solid #181818;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+
+
+/*============BUTTONS============*/
+
+.ButtonRed{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--red-light);
+    border: 2px solid var(--dark);
+    border-radius: 0.5rem;
+    transition: 0.1s ease-out;
+}
+.ButtonRed:hover{
+    background-color: #ffe2d7;
+}
+
+.ButtonYellow {
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--yellow);
+    border: 2px solid var(--dark);
+    border-radius: 0.5rem;
+    transition: 0.1s ease-out;
+}
+.ButtonYellow:hover{
+    background-color: #fef6bd;
+}
+
+.ButtonBlue{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--blue-light);
+    border: 2px solid var(--dark);
+    border-radius: 0.5rem;
+    transition: 0.1s ease-out;
+}
+.ButtonBlue:hover{
+    background-color: #9ac9fc;
+}
+
+.ButtonGreen{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--green-light);
+    border: 2px solid var(--dark);
+    border-radius: 0.5rem;
+    transition: 0.1s ease-out;
+}
+.ButtonGreen:hover{
+    background-color: #e7feee;
 }
