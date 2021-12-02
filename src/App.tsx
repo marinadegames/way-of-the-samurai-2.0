@@ -24,17 +24,17 @@ let ButtonRed = () => <button className='ButtonRed'> red <b>alert</b>  </button>
 let ButtonYellow = () => <button className='ButtonYellow'> yellow <b>favorites</b>  </button>
 let ButtonBlue = () => <button className='ButtonBlue'> blue <b>info</b> </button>
 let ButtonGreen = () => <button className='ButtonGreen'> green <b>send</b> </button>
-let ButtonStar = () => <button className='ButtonStar'> {starImg} </button>
+let Star = () => <button className='ButtonStar'> {starImg} </button>
 
 function Rating() {
     return (
         <div className='Rating'>
             <h3>Rating:</h3>
-            <ButtonStar />
-            <ButtonStar />
-            <ButtonStar />
-            <ButtonStar />
-            <ButtonStar />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
         </div>
     )
 }
