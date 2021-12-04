@@ -3,8 +3,6 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Rating/Rating";
 
-
-
 function App(props:any) {
     return (
         <div className="App">
@@ -23,8 +21,8 @@ function App(props:any) {
             <ButtonBlue />
             <ButtonGreen />
 
-            {/*<Accordion title={'MENU: '}/>*/}
-            {/*<Accordion title={'USERS: '}/>*/}
+            <Accordion title={'MENU: '} collapsed={true}/>
+            <Accordion title={'USERS: '} collapsed={false}/>
 
         </div>
     );
