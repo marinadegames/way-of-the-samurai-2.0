@@ -4,7 +4,15 @@ import React from "react";
 //assets
 let starImg = <img src="https://img.icons8.com/ios/20/000000/star--v1.png" alt='png'/>
 
-function Rating(props: any) {
+//type
+type RatingProps = {
+    value: number,
+}
+type StarPropsType = {
+    selected: boolean,
+}
+
+function Rating(props: RatingProps) {
     if (props.value === 1) {
         return (
             <div className='Rating'>
@@ -77,8 +85,8 @@ function Rating(props: any) {
     )
 }
 
-function Star (props: any){
-    if (props.selected === false) {
+function Star (props: StarPropsType){
+    if (!props.selected) {
         return <button className='ButtonStar'> {starImg} </button>
     }else{
         return <button className='ButtonStarCheck'> {starImg} </button>
