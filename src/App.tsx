@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
+import Rating from "./components/Rating/Rating";
 
 
-let starImg = <img src="https://img.icons8.com/ios/30/000000/star--v1.png" alt='png'/>
 
 function App(props:any) {
     return (
@@ -12,13 +12,19 @@ function App(props:any) {
             <div className='Main'> Main </div>
             <div className='Footer'> Footer </div>
 
-            <Rating />
+            Rating 1:
+            <Rating value={1}/>
+
+            Rating 2:
+            <Rating value={4}/>
+
             <ButtonRed />
             <ButtonYellow />
             <ButtonBlue />
             <ButtonGreen />
 
-            <Accordion/>
+            {/*<Accordion title={'MENU: '}/>*/}
+            {/*<Accordion title={'USERS: '}/>*/}
 
         </div>
     );
@@ -28,20 +34,6 @@ let ButtonRed = (props:any) => <button className='ButtonRed'> red <b>alert</b>  
 let ButtonYellow = (props:any) => <button className='ButtonYellow'> yellow <b>favorites</b>  </button>
 let ButtonBlue = (props:any) => <button className='ButtonBlue'> blue <b>info</b> </button>
 let ButtonGreen = (props:any) => <button className='ButtonGreen'> green <b>send</b> </button>
-let Star = (props:any) => <button className='ButtonStar'> {starImg} </button>
-
-function Rating(props:any) {
-    return (
-        <div className='Rating'>
-            <h3>Rating:</h3>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-        </div>
-    )
-}
 
 
 

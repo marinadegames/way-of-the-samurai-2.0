@@ -3,14 +3,15 @@ import React from "react";
 function Accordion(props:any){
     return(
         <div className='Accordion'>
-            <AccordionTitle/>
+            <AccordionTitle title={props.title}/>
             <AccordionBody/>
         </div>
     )
 }
 function AccordionTitle(props:any){
-    return <h3>Меню:</h3>
+    return <h3>{props.title}</h3>
 }
+
 function AccordionBody(props:any){
     return (
         <ul>
