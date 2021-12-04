@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Accordion from "./components/Accordion/Accordion";
 
 
 let starImg = <img src="https://img.icons8.com/ios/30/000000/star--v1.png" alt='png'/>
@@ -42,25 +43,6 @@ function Rating(props:any) {
     )
 }
 
-function Accordion(props:any){
-    return(
-        <div className='Accordion'>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    )
-}
-function AccordionTitle(props:any){
-    return <h3>Меню:</h3>
-}
-function AccordionBody(props:any){
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    )
-}
+
 
 export default App;
