@@ -8,23 +8,25 @@ function App(props: any) {
     return (
         <div className="App">
             <div className='Header'> Header</div>
-            <div className='Main'> Main</div>
-            <div className='Footer'> Footer</div>
+            {/*<div className='Main'> Main</div>*/}
+            {/*<div className='Footer'> Footer</div>*/}
 
-            <Rating value={1}/>
-            <Rating value={4}/>
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={4}/>*/}
 
-            <ButtonRed/>
-            <ButtonYellow/>
-            <ButtonBlue/>
-            <ButtonGreen/>
+            {/*<ButtonRed/>*/}
+            {/*<ButtonYellow/>*/}
+            {/*<ButtonBlue/>*/}
+            {/*<ButtonGreen/>*/}
 
-            <Accordion title={'MENU: '} collapsed={true}/>
-            <Accordion title={'USERS: '} collapsed={false}/>
+            {/*<Accordion title={'MENU: '} collapsed={true}/>*/}
+            {/*<Accordion title={'USERS: '} collapsed={false}/>*/}
 
-             <hr/>
+            {/* <hr/>*/}
 
-            <OnOff on={true}/>
+            <OnOff/>
+            <OnOff/>
+            <OnOff/>
 
         </div>
     );
