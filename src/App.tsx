@@ -3,6 +3,7 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import {SelfControlledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
 
 function App(props: any) {
     return (
@@ -27,6 +28,8 @@ function App(props: any) {
             <OnOff/>
             <OnOff/>
             <OnOff/>
+
+            <SelfControlledAccordion title={'MENU'}/>
 
         </div>
     );
