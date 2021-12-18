@@ -12,8 +12,7 @@ function App(props: any) {
             {/*<div className='Main'> Main</div>*/}
             {/*<div className='Footer'> Footer</div>*/}
 
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={4}/>*/}
+            <Rating />
 
             {/*<ButtonRed/>*/}
             {/*<ButtonYellow/>*/}

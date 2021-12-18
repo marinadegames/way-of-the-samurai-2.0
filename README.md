@@ -8,8 +8,8 @@ This repository for my social network 2.0
 🟡 `v0.0.2` - add `props` and `types props`  
 👌 `v0.0.3`  - add `conditional rendering` for component `<Rating />`  
 📝 `v0.0.4` - add `hook` - `useState` | add component `<OnOff />`  
-✌️`v0.0.5` - add component `<SelfControlledAccordion />`
-
+✌️ `v0.0.5` - add component `<SelfControlledAccordion />`  
+🧨 `v0.0.6` - add `hook` **useState** in component **Star**
 
 ### 🙃 Good luck for me! ###
 ### `🚀 vjuuuuuuhhhhhhhhh 🚀` ###
