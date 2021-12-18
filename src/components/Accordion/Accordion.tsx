@@ -5,16 +5,17 @@ import React from "react";
 type AccordionPropsTitle = {
     title: string
 
+
 }
 type AccordionPropsCollapsed = {
-    collapsed: boolean,
+    collapsed?: boolean,
 }
 
 function Accordion(props: AccordionPropsTitle & AccordionPropsCollapsed){
     return(
         <div className='Accordion'>
             <AccordionTitle title={props.title}/>
-            <AccordionBody collapsed={props.collapsed}/>
+            { !props.collapsed && <AccordionBody/> }
         </div>
     )
 }
@@ -33,7 +34,7 @@ function AccordionBody(props:any){
             </ul>
         )
     }else{
-        return <>show....</>
+        return <button>show....</button>
     }
 
 
