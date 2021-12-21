@@ -10,7 +10,7 @@ type RatingProps = {
 }
 type StarPropsType = {
     selected: boolean
-    setSelected: (value: 1 | 2 | 3 | 4 | 5 ) => void
+    setSelected: (value: 1 | 2 | 3 | 4 | 5) => void
     value: 1 | 2 | 3 | 4 | 5
 }
 
@@ -22,11 +22,11 @@ function Rating(props: RatingProps) {
     return (
         <div className='Rating'>
             <h3 className='ratingTitle'>Rating:</h3>
-            <Star selected={selected > 0} setSelected={setSelected} value={1} />
-            <Star selected={selected > 1} setSelected={setSelected} value={2} />
-            <Star selected={selected > 2} setSelected={setSelected} value={3} />
-            <Star selected={selected > 3} setSelected={setSelected} value={4} />
-            <Star selected={selected > 4} setSelected={setSelected} value={5} />
+            <Star selected={selected > 0} setSelected={setSelected} value={1}/>
+            <Star selected={selected > 1} setSelected={setSelected} value={2}/>
+            <Star selected={selected > 2} setSelected={setSelected} value={3}/>
+            <Star selected={selected > 3} setSelected={setSelected} value={4}/>
+            <Star selected={selected > 4} setSelected={setSelected} value={5}/>
         </div>
     )
 }
@@ -34,8 +34,8 @@ function Rating(props: RatingProps) {
 function Star(props: StarPropsType) {
     return <button className={!props.selected ? 'ButtonStar' : 'ButtonStarCheck'}
                    onClick={() => {
-                       props.setSelected(props.value)
-                   }}> {starImg} </button>
+                       props.setSelected(props.value)}
+                   }> {starImg} </button>
 }
 
 export default Rating;

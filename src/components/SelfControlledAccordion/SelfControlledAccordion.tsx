@@ -19,13 +19,18 @@ export function SelfControlledAccordion(props: AccordionPropsTitle & AccordionPr
 
     return(
         <div className='Accordion'>
-            <h3 className={s.accordionTitle}>{props.title}</h3>
-            <button className={s.btnShow} onClick={() => setCollapsed(!collapsed) }>show</button>
-            <AccordionBody collapsed={collapsed}/>
+            <AccordionTitle title={props.title}
+                            onClick={ () => setCollapsed(!collapsed) }/>
+            <AccordionBody collapsed={collapsed} />
         </div>
     )
 }
 
+function AccordionTitle (props:any){
+    return (
+        <h3 onClick={ () => props.onClick() } className={s.accordionTitle} >{props.title}</h3>
+    )
+}
 
 function AccordionBody(props:any){
 
