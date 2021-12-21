@@ -10,47 +10,43 @@ type RatingProps = {
 }
 type StarPropsType = {
     id: number
-    //star: boolean,
-    //selectedBtn: () => void
+    selected: boolean
+    onClick: any
 }
 
 // component
 function Rating(props: RatingProps) {
 
+    let [selected, setSelected] = useState(2)
 
+    const setSelectStar = () => {
+
+    }
 
     return (
         <div className='Rating'>
-            <h3>Rating:</h3>
-            <Star id={1}/>
-            <Star id={2}/>
-            <Star id={3}/>
-            <Star id={4}/>
-            <Star id={5}/>
+            <h3 className='ratingTitle'>Rating:</h3>
+            <Star id={1} selected={ selected > 0} onClick={ () => { setSelected(1) }} />
+            <Star id={2} selected={ selected > 1} onClick={ () => { setSelected(2) }} />
+            <Star id={3} selected={ selected > 2} onClick={ () => { setSelected(3) }} />
+            <Star id={4} selected={ selected > 3} onClick={ () => { setSelected(4) }} />
+            <Star id={5} selected={ selected > 4} onClick={ () => { setSelected(5) }} />
         </div>
     )
 }
 
-function Star (props: StarPropsType){
+function Star(props: StarPropsType) {
 
 
-
-    let [selected, setSelected] = useState(false)
-
-
-
-    const selectedBtn = () => {
-        selected ? setSelected(false) : setSelected(true)
-    }
-
-    if (!selected) {
+    if (!props.selected) {
         return <button key={props.id}
-                       onClick={ selectedBtn }
+                       onClick={props.onClick}
                        className='ButtonStar'> {starImg} </button>
-    }else{
+    } else {
         return <button key={props.id}
-                       onClick={ selectedBtn }
+                       onClick={props.onClick}
                        className='ButtonStarCheck'> {starImg} </button>
     }
 }
+
 export default Rating;

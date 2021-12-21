@@ -9,7 +9,8 @@ This repository for my social network 2.0
 👌 `v0.0.3`  - add `conditional rendering` for component `<Rating />`  
 📝 `v0.0.4` - add `hook` - `useState` | add component `<OnOff />`  
 ✌️ `v0.0.5` - add component `<SelfControlledAccordion />`  
-🧨 `v0.0.6` - add `hook` **useState** in component **Star**
+🧨 `v0.0.6` - add `hook` **useState** in component **Star**  
+⭐ `v0.0.7` - rating is now working 🎉🎉🎉  
 
 ### 🙃 Good luck for me! ###
 ### `🚀 vjuuuuuuhhhhhhhhh 🚀` ###

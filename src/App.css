@@ -116,7 +116,7 @@ h1,h2,h3,h4,h5,h6{
     cursor: pointer;
     background-color: var(--light);
     border: 1px solid var(--dark);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     transition: 0.1s ease-out;
 }
 .ButtonStar:hover{
@@ -127,14 +127,17 @@ h1,h2,h3,h4,h5,h6{
     margin: 0 0.5rem 0 0;
     cursor: pointer;
     border: 1px solid var(--dark);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     transition: 0.1s ease-out;
     background-color: var(--yellow)
 }
 .ButtonStarCheck:hover{
-    background-color: var(--light)
+    /*background-color: var(--light)*/
 }
 
 .Accordion{
     margin: 1rem 0 0 0;
+}
+.ratingTitle{
+    margin: 0 0 1rem 0;
 }
