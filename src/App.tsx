@@ -3,11 +3,12 @@ import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {SelfControlledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
+import {UncontrolledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
 
 function App(props: any) {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
+    let [accordionCollapsed, setAccordionCollapsed] = useState(false)
 
     return (
         <div className="App">
@@ -31,7 +32,9 @@ function App(props: any) {
             <OnOff/>
             <OnOff/>
 
-            <SelfControlledAccordion title={'MENU'}/>
+            <UncontrolledAccordion accordionCollapsed={accordionCollapsed}
+                                     setAccordionCollapsed={setAccordionCollapsed}
+                                     title={'MENU'}/>
 
         </div>
     );

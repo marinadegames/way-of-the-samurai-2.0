@@ -1,49 +1,31 @@
 //imports
-import React, {useState} from "react";
+import React from "react";
 import s from './SelfControlledAccordion.module.css'
 
-//type
-type AccordionPropsTitle = {
-    title: string
-
-}
-
-type AccordionPropsCollapsed = {
-    collapsed?: boolean
-}
-type AccrodionTitlePropsType = {
-    title: string
-    onClick: () => void
-}
-type AccordionBodyTypeProps = {
-    collapsed?: boolean
-}
-
-export function SelfControlledAccordion(props: AccordionPropsTitle & AccordionPropsCollapsed){
-
-    let [collapsed, setCollapsed] = useState(false)
+//types
 
 
-    // styles
-
-    return(
+// components
+export function UncontrolledAccordion(props: any) {
+    return (
         <div className='Accordion'>
             <AccordionTitle title={props.title}
-                            onClick={ () => setCollapsed(!collapsed) }/>
-            <AccordionBody collapsed={collapsed} />
+                            onClick={() => props.setAccordionCollapsed(!props.accordionCollapsed)}/>
+            <AccordionBody accordionCollapsed={props.accordionCollapsed}/>
         </div>
     )
 }
 
-function AccordionTitle (props: AccrodionTitlePropsType){
+function AccordionTitle(props: any) {
     return (
-        <h3 onClick={ () => props.onClick() } className={s.accordionTitle} >{props.title}</h3>
+        <h3 onClick={() => props.onClick()}
+            className={s.accordionTitle}>{props.title}</h3>
     )
 }
 
-function AccordionBody(props:AccordionBodyTypeProps){
+function AccordionBody(props: any) {
 
-    if (props.collapsed === true){
+    if (props.accordionCollapsed === true) {
         return (
             <div className={s.menu}>
                 <li>HTML & CSS</li>
@@ -51,7 +33,7 @@ function AccordionBody(props:AccordionBodyTypeProps){
                 <li>React</li>
             </div>
         )
-    }else{
+    } else {
         return <div/>
     }
 

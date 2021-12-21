@@ -11,6 +11,7 @@ This repository for my social network 2.0
 ✌️ `v0.0.5` - add component `<SelfControlledAccordion />`  
 🧨 `v0.0.6` - add `hook` **useState** in component **Star**  
 ⭐ `v0.0.7` - rating is now working 🎉🎉🎉  
+🧢 `v0.0.8` - refactor code | hooks `useState` moved to App.tsx
 
 ### 🙃 Good luck for me! ###
 ### `🚀 vjuuuuuuhhhhhhhhh 🚀` ###
