@@ -1,41 +1,41 @@
 // imports
-import React, {useState} from "react";
+import React from "react";
 
 //assets
 let starImg = <img src="https://img.icons8.com/ios/20/000000/star--v1.png" alt='png'/>
 
 //type
-type RatingProps = {
-    //value: number,
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
+type RatingPropsType = {
+    value: RatingValueType
+    onClick: (value: RatingValueType) => void
 }
 type StarPropsType = {
+    onClick: (value:RatingValueType) => void
     selected: boolean
-    setSelected: (value: 1 | 2 | 3 | 4 | 5) => void
-    value: 1 | 2 | 3 | 4 | 5
+    value: RatingValueType
 }
 
 // component
-function Rating(props: RatingProps) {
+function Rating(props: RatingPropsType) {
 
-    let [selected, setSelected] = useState(2)
 
     return (
         <div className='Rating'>
             <h3 className='ratingTitle'>Rating:</h3>
-            <Star selected={selected > 0} setSelected={setSelected} value={1}/>
-            <Star selected={selected > 1} setSelected={setSelected} value={2}/>
-            <Star selected={selected > 2} setSelected={setSelected} value={3}/>
-            <Star selected={selected > 3} setSelected={setSelected} value={4}/>
-            <Star selected={selected > 4} setSelected={setSelected} value={5}/>
+            <Star selected={props.value > 0}  onClick={ props.onClick } value={1}/>
+            <Star selected={props.value > 1}  onClick={ props.onClick } value={2}/>
+            <Star selected={props.value > 2}  onClick={ props.onClick } value={3}/>
+            <Star selected={props.value > 3}  onClick={ props.onClick } value={4}/>
+            <Star selected={props.value > 4}  onClick={ props.onClick } value={5}/>
         </div>
     )
 }
 
 function Star(props: StarPropsType) {
     return <button className={!props.selected ? 'ButtonStar' : 'ButtonStarCheck'}
-                   onClick={() => {
-                       props.setSelected(props.value)}
-                   }> {starImg} </button>
+                   onClick={() => { props.onClick(props.value) }}> {starImg} </button>
 }
 
 export default Rating;

@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import Rating from "./components/Rating/Rating";
+import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {SelfControlledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
 
 function App(props: any) {
+
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
+
     return (
         <div className="App">
             <div className='Header'> Header</div>
             {/*<div className='Main'> Main</div>*/}
             {/*<div className='Footer'> Footer</div>*/}
 
-            <Rating />
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
             {/*<ButtonRed/>*/}
             {/*<ButtonYellow/>*/}
