@@ -5,9 +5,18 @@ import s from './SelfControlledAccordion.module.css'
 //type
 type AccordionPropsTitle = {
     title: string
+
 }
+
 type AccordionPropsCollapsed = {
-    collapsed?: boolean,
+    collapsed?: boolean
+}
+type AccrodionTitlePropsType = {
+    title: string
+    onClick: () => void
+}
+type AccordionBodyTypeProps = {
+    collapsed?: boolean
 }
 
 export function SelfControlledAccordion(props: AccordionPropsTitle & AccordionPropsCollapsed){
@@ -26,13 +35,13 @@ export function SelfControlledAccordion(props: AccordionPropsTitle & AccordionPr
     )
 }
 
-function AccordionTitle (props:any){
+function AccordionTitle (props: AccrodionTitlePropsType){
     return (
         <h3 onClick={ () => props.onClick() } className={s.accordionTitle} >{props.title}</h3>
     )
 }
 
-function AccordionBody(props:any){
+function AccordionBody(props:AccordionBodyTypeProps){
 
     if (props.collapsed === true){
         return (
