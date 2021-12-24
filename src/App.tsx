@@ -4,11 +4,13 @@ import Accordion from "./components/Accordion/Accordion";
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
+import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
 
 function App(props: any) {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
     let [accordionCollapsed, setAccordionCollapsed] = useState(false)
+    let [switchOn, setSwitchOn] = useState(false)
 
     return (
         <div className="App">
@@ -28,13 +30,13 @@ function App(props: any) {
 
             {/* <hr/>*/}
 
-            <OnOff/>
-            <OnOff/>
-            <OnOff/>
+            <OnOff on={switchOn}
+                   onChange={ (on) => {setSwitchOn(on)} }/>
+            {/*<UncontrolledOnOff />*/}
 
             <UncontrolledAccordion accordionCollapsed={accordionCollapsed}
-                                     setAccordionCollapsed={setAccordionCollapsed}
-                                     title={'MENU'}/>
+                                   setAccordionCollapsed={setAccordionCollapsed}
+                                   title={'MENU'}/>
 
         </div>
     );

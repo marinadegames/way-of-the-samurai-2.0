@@ -3,22 +3,37 @@ import React from "react";
 import s from './SelfControlledAccordion.module.css'
 
 //types
-
+type UnContrAccordPropsType = {
+    title: string
+    setAccordionCollapsed: (accordionCollapsed: boolean) => void
+    accordionCollapsed: boolean
+}
 
 // components
-export function UncontrolledAccordion(props: any) {
+export function UncontrolledAccordion(props: UnContrAccordPropsType) {
+
+    const clickCollapsed = () => {
+        props.setAccordionCollapsed(!props.accordionCollapsed)
+    }
+
     return (
         <div className='Accordion'>
             <AccordionTitle title={props.title}
-                            onClick={() => props.setAccordionCollapsed(!props.accordionCollapsed)}/>
+                            onClick={clickCollapsed}/>
             <AccordionBody accordionCollapsed={props.accordionCollapsed}/>
         </div>
     )
 }
 
+
 function AccordionTitle(props: any) {
+
+    const titleMenuClick = () => {
+        props.onClick()
+    }
+
     return (
-        <h3 onClick={() => props.onClick()}
+        <h3 onClick={titleMenuClick}
             className={s.accordionTitle}>{props.title}</h3>
     )
 }
