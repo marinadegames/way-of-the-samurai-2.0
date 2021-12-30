@@ -1,6 +1,6 @@
 {
   "name": "way-of-the-samurai-2.0",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "private": true,
   "dependencies": {
     "@babel/preset-typescript": "^7.16.5",
