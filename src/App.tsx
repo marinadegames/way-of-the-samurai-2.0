@@ -1,51 +1,41 @@
 import React, {useState} from 'react';
-import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import s from './App.module.css';
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import {UncontrolledAccordion} from "./components/SelfControlledAccordion/SelfControlledAccordion";
-import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff";
+import { UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {ColorButtons} from "./components/ColorButtons/ColorButtons";
 
-function App(props: any) {
+function App() {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
     let [accordionCollapsed, setAccordionCollapsed] = useState(false)
     let [switchOn, setSwitchOn] = useState(false)
 
+
     return (
-        <div className="App">
-            <div className='Header'> Header</div>
-            {/*<div className='Main'> Main</div>*/}
-            {/*<div className='Footer'> Footer</div>*/}
+        <div className={s.App}>
 
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <div className={s.Header}>
+                <h3>Header</h3>
+                <UncontrolledAccordion accordionCollapsed={accordionCollapsed}
+                                       setAccordionCollapsed={setAccordionCollapsed}
+                                       title={'MENU'}/>
+            </div>
 
-            {/*<ButtonRed/>*/}
-            {/*<ButtonYellow/>*/}
-            {/*<ButtonBlue/>*/}
-            {/*<ButtonGreen/>*/}
+            <div className={s.Main}>
+                <h3>MAIN</h3>
+                <hr/>
+                <Rating value={ratingValue} onClick={setRatingValue}/>
+                <OnOff on={switchOn} onChange={(on) => setSwitchOn(on)}/>
+                <ColorButtons/>
+            </div>
 
-            {/*<Accordion title={'MENU: '} collapsed={true}/>*/}
-            {/*<Accordion title={'USERS: '} collapsed={false}/>*/}
-
-            {/* <hr/>*/}
-
-            <OnOff on={switchOn}
-                   onChange={ (on) => {setSwitchOn(on)} }/>
-            {/*<UncontrolledOnOff />*/}
-
-            <UncontrolledAccordion accordionCollapsed={accordionCollapsed}
-                                   setAccordionCollapsed={setAccordionCollapsed}
-                                   title={'MENU'}/>
+            <div className={s.Footer}>
+                <h3>Footer</h3>
+            </div>
 
         </div>
     );
 }
-
-let ButtonRed = (props: any) => <button className='ButtonRed'> red <b>alert</b></button>
-let ButtonYellow = (props: any) => <button className='ButtonYellow'> yellow <b>favorites</b></button>
-let ButtonBlue = (props: any) => <button className='ButtonBlue'> blue <b>info</b></button>
-let ButtonGreen = (props: any) => <button className='ButtonGreen'> green <b>send</b></button>
-
 
 export default App;

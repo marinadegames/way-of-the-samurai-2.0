@@ -1,23 +1,27 @@
 //imports
 import React from "react";
-import s from './SelfControlledAccordion.module.css'
+import s from './UncontrolledAccordion.module.css'
+import {Story} from "@storybook/react";
 
 //types
-type UnContrAccordPropsType = {
+export type UncontrolledAccordionPropsType = {
     title: string
     setAccordionCollapsed: (accordionCollapsed: boolean) => void
     accordionCollapsed: boolean
 }
 
+// storybook
+
+
 // components
-export function UncontrolledAccordion(props: UnContrAccordPropsType) {
+export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
     const clickCollapsed = () => {
         props.setAccordionCollapsed(!props.accordionCollapsed)
     }
 
     return (
-        <div className='Accordion'>
+        <div className={s.accordion}>
             <AccordionTitle title={props.title}
                             onClick={clickCollapsed}/>
             <AccordionBody accordionCollapsed={props.accordionCollapsed}/>

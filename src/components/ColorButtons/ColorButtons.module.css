@@ -1,0 +1,87 @@
+.titleColorButtons{
+    text-decoration: underline;
+    margin: 0 0 0.2rem 0;
+}
+
+/*============BUTTONS============*/
+
+.ButtonRed{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--red);
+    border: 1px solid var(--dark);
+    /*border-radius: 0.5rem;*/
+    transition: 0.1s ease-out;
+}
+.ButtonRed:hover{
+    background-color: #ffe2d7;
+}
+
+.ButtonYellow {
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--yellow);
+    border: 1px solid var(--dark);
+    /*border-radius: 0.5rem;*/
+    transition: 0.1s ease-out;
+}
+.ButtonYellow:hover{
+    background-color: #fef6bd;
+}
+
+.ButtonBlue{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--blue);
+    border: 1px solid var(--dark);
+    /*border-radius: 0.5rem;*/
+    transition: 0.1s ease-out;
+}
+.ButtonBlue:hover{
+    background-color: #D6EBFF;
+}
+
+.ButtonGreen{
+    padding: 0.5rem;
+    margin: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--green);
+    border: 1px solid var(--dark);
+    /*border-radius: 0.5rem;*/
+    transition: 0.1s ease-out;
+}
+.ButtonGreen:hover{
+    background-color: #e7feee;
+}
+
+.ButtonStar{
+    padding: 0.5rem;
+    margin: 0 0.5rem 0 0;
+    cursor: pointer;
+    background-color: var(--light);
+    border: 1px solid var(--dark);
+    /*border-radius: 0.2rem;*/
+    transition: 0.1s ease-out;
+}
+.ButtonStar:hover{
+    background-color: var(--yellow);
+}
+.ButtonStarCheck{
+    padding: 0.5rem;
+    margin: 0 0.5rem 0 0;
+    cursor: pointer;
+    border: 1px solid var(--dark);
+    /*border-radius: 1.5rem;*/
+    transition: 0.1s ease-out;
+    background-color: var(--yellow)
+}
+.ButtonStarCheck:hover{
+    /*background-color: var(--light)*/
+}
+
+.ratingTitle{
+    margin: 0 0 1rem 0;
+}
