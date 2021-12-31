@@ -13,6 +13,9 @@ This repository for my social network 2.0
 ⭐ `v0.0.7` - rating is now working 🎉🎉🎉  
 🧢 `v0.0.8` - refactor code | hooks `useState` moved to App.tsx  
 📜 `v0.0.9` - added `storybook`  
+🧵 `v0.1.0` - g
+
+
 
 
 ### 🙃 Good luck for me! ###

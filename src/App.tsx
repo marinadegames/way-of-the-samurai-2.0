@@ -4,6 +4,7 @@ import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import { UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {ColorButtons} from "./components/ColorButtons/ColorButtons";
+import {Input} from "./components/Input/Input";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
                 <Rating value={ratingValue} onClick={setRatingValue}/>
                 <OnOff on={switchOn} onChange={(on) => setSwitchOn(on)}/>
                 <ColorButtons/>
+                <Input />
             </div>
 
             <div className={s.Footer}>
