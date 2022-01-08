@@ -2,54 +2,74 @@
 import React from "react";
 import s from './UncontrolledAccordion.module.css'
 import {Story} from "@storybook/react";
+import {ItemsMenuType} from "../../App";
 
 //types
 export type UncontrolledAccordionPropsType = {
     title: string
     setAccordionCollapsed: (accordionCollapsed: boolean) => void
     accordionCollapsed: boolean
+    itemsMenu: Array<ItemsMenuType>,
 }
-
-// storybook
+type AccordionTitlePropsType = {
+    title: string,
+    onClick: () => void,
+}
+type AccordionBodyPropsType = {
+    itemsMenu: Array<ItemsMenuType>,
+    accordionCollapsed: boolean,
+}
 
 
 // components
-export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
+export function UncontrolledAccordion(
+    {
+        title,
+        accordionCollapsed,
+        setAccordionCollapsed,
+        itemsMenu,
+        ...props
+    }: UncontrolledAccordionPropsType) {
 
     const clickCollapsed = () => {
-        props.setAccordionCollapsed(!props.accordionCollapsed)
+        setAccordionCollapsed(!accordionCollapsed)
     }
 
     return (
         <div className={s.accordion}>
-            <AccordionTitle title={props.title}
+            <AccordionTitle title={title}
                             onClick={clickCollapsed}/>
-            <AccordionBody accordionCollapsed={props.accordionCollapsed}/>
+            <AccordionBody accordionCollapsed={accordionCollapsed}
+                           itemsMenu={itemsMenu}/>
         </div>
     )
 }
 
 
-function AccordionTitle(props: any) {
+function AccordionTitle({title, onClick, ...props}: AccordionTitlePropsType) {
 
     const titleMenuClick = () => {
-        props.onClick()
+        onClick()
     }
 
     return (
         <h3 onClick={titleMenuClick}
-            className={s.accordionTitle}>{props.title}</h3>
+            className={s.accordionTitle}>{title}</h3>
     )
 }
 
-function AccordionBody(props: any) {
+function AccordionBody(props: AccordionBodyPropsType) {
 
-    if (props.accordionCollapsed === true) {
+    if (props.accordionCollapsed) {
         return (
             <div className={s.menu}>
-                <li>HTML & CSS</li>
-                <li>JS</li>
-                <li>React</li>
+                {props.itemsMenu.map((i: ItemsMenuType) => {
+                    return (
+                        <li key={i.id}>
+                            {i.title}
+                        </li>
+                    )
+                })}
             </div>
         )
     } else {

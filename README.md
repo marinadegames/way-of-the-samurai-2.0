@@ -1,7 +1,7 @@
 # 🤖 Social Network 2.0 \ Way of the samurai 2.0!!! #
 ## ♻️TypeScript ##
 ### ❓ What's this app? ###
-This repository for my social network 2.0
+This repository for video lessons "React кабзда как подробно"
 
 #### Update: ####
 🔘 `v0.0.1` - Create project | `TypeScript`  
@@ -14,8 +14,7 @@ This repository for my social network 2.0
 🧢 `v0.0.8` - refactor code | hooks `useState` moved to App.tsx  
 📜 `v0.0.9` - added `storybook`  
 🧵 `v0.1.0` - added `<Input/>` component with local state  
-
-
+☑️ `v0.1.1` - added `<Select/>` component | added select in select button    
 
 
 ### 🙃 Good luck for me! ###
