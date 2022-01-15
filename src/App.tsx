@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import s from './App.module.css';
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
@@ -16,8 +16,11 @@ export type ItemsMenuType = {
 function App() {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
-    let [accordionCollapsed, setAccordionCollapsed] = useState(false)
     let [switchOn, setSwitchOn] = useState(false)
+    // let [accordionCollapsed, setAccordionCollapsed] = useState(false)
+
+
+
 
     const [itemsMenu, setItemsMenu] = useState<Array<ItemsMenuType>>([
         {id: v1(), title: 'HTML&CSS'},
@@ -38,8 +41,9 @@ function App() {
 
             <div className={s.Header}>
                 <h3>Header</h3>
-                <UncontrolledAccordion accordionCollapsed={accordionCollapsed}
-                                       setAccordionCollapsed={setAccordionCollapsed}
+                <UncontrolledAccordion
+                    // accordionCollapsed={accordionCollapsed}
+                    //                    setAccordionCollapsed={dispatch}
                                        itemsMenu={itemsMenu}
                                        title={'MENU'}/>
             </div>

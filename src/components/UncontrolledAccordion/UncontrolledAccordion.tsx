@@ -1,5 +1,5 @@
 //imports
-import React from "react";
+import React, {useReducer} from "react";
 import s from './UncontrolledAccordion.module.css'
 import {Story} from "@storybook/react";
 import {ItemsMenuType} from "../../App";
@@ -7,8 +7,8 @@ import {ItemsMenuType} from "../../App";
 //types
 export type UncontrolledAccordionPropsType = {
     title: string
-    setAccordionCollapsed: (accordionCollapsed: boolean) => void
-    accordionCollapsed: boolean
+    // setAccordionCollapsed: (dispatch: boolean) => void
+    // accordionCollapsed: boolean
     itemsMenu: Array<ItemsMenuType>,
 }
 type AccordionTitlePropsType = {
@@ -19,26 +19,40 @@ type AccordionBodyPropsType = {
     itemsMenu: Array<ItemsMenuType>,
     accordionCollapsed: boolean,
 }
+type actionType = {
+    type: string
+}
+
+const TOGGLE_CONST = 'TOGGLE-COLLAPSED'
+
+const reducer = (state: boolean, action: actionType) => {
+    /// logic
+    switch (action.type) {
+        case TOGGLE_CONST:
+            return !state
+        default:
+            return state
+    }
+}
 
 
 // components
 export function UncontrolledAccordion(
     {
         title,
-        accordionCollapsed,
-        setAccordionCollapsed,
+        // accordionCollapsed,
+        // setAccordionCollapsed,
         itemsMenu,
         ...props
     }: UncontrolledAccordionPropsType) {
 
-    const clickCollapsed = () => {
-        setAccordionCollapsed(!accordionCollapsed)
-    }
+    let [accordionCollapsed, dispatch] = useReducer(reducer, false)
+
 
     return (
         <div className={s.accordion}>
             <AccordionTitle title={title}
-                            onClick={clickCollapsed}/>
+                            onClick={() => dispatch({type: 'TOGGLE-COLLAPSED'})}/>
             <AccordionBody accordionCollapsed={accordionCollapsed}
                            itemsMenu={itemsMenu}/>
         </div>
