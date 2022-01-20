@@ -15,7 +15,8 @@ This repository for video lessons "React кабзда как подробно"
 📜 `v0.0.9` - added `storybook`  
 🧵 `v0.1.0` - added `<Input/>` component with local state  
 ☑️ `v0.1.1` - added `<Select/>` component | added select in select button    
-🪝️ `v0.1.2` - added `useReducer` 
+🪝️ `v0.1.2` - added `useReducer`   
+🛠️️ `v0.1.3` - added `React memo` + repair `storybook`  
 
 
 ### 🙃 Good luck for me! ###

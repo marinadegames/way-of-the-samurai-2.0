@@ -1,7 +1,6 @@
 //imports
 import React, {useReducer} from "react";
 import s from './UncontrolledAccordion.module.css'
-import {Story} from "@storybook/react";
 import {ItemsMenuType} from "../../App";
 
 //types
