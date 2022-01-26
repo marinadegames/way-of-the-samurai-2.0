@@ -17,6 +17,7 @@ This repository for video lessons "React кабзда как подробно"
 ☑️ `v0.1.1` - added `<Select/>` component | added select in select button    
 🪝️ `v0.1.2` - added `useReducer`   
 🛠️️ `v0.1.3` - added `React memo` + repair `storybook`  
+🔃️ `v0.1.4` - added `useMemo`
 
 
 ### 🙃 Good luck for me! ###
