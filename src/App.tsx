@@ -1,11 +1,11 @@
-import React, {useReducer, useState} from 'react';
+import React, {useState} from 'react';
 import s from './App.module.css';
 import Rating, {RatingValueType} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
-import { UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {ColorButtons} from "./components/ColorButtons/ColorButtons";
 import {Input} from "./components/Input/Input";
-import { v1 } from 'uuid';
+import {v1} from 'uuid';
 import {Select} from "./components/Select/Select";
 
 export type ItemsMenuType = {
@@ -18,8 +18,6 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
     let [switchOn, setSwitchOn] = useState(false)
     // let [accordionCollapsed, setAccordionCollapsed] = useState(false)
-
-
 
 
     const [itemsMenu, setItemsMenu] = useState<Array<ItemsMenuType>>([
@@ -44,8 +42,8 @@ function App() {
                 <UncontrolledAccordion
                     // accordionCollapsed={accordionCollapsed}
                     //                    setAccordionCollapsed={dispatch}
-                                       itemsMenu={itemsMenu}
-                                       title={'MENU'}/>
+                    itemsMenu={itemsMenu}
+                    title={'MENU'}/>
             </div>
 
             <div className={s.Main}>
@@ -54,7 +52,7 @@ function App() {
                 <Rating value={ratingValue} onClick={setRatingValue}/>
                 <OnOff on={switchOn} onChange={(on) => setSwitchOn(on)}/>
                 <ColorButtons/>
-                <Input />
+                <Input/>
                 <Select selectItems={selectItems}/>
             </div>
 
