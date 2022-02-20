@@ -7,6 +7,7 @@ import {ColorButtons} from "./components/ColorButtons/ColorButtons";
 import {Input} from "./components/Input/Input";
 import {v1} from 'uuid';
 import {Select} from "./components/Select/Select";
+import {Clock} from "./components/Clock/Clock";
 
 export type ItemsMenuType = {
     id: string,
@@ -39,6 +40,7 @@ function App() {
 
             <div className={s.Header}>
                 <h3>Header</h3>
+                <Clock/>
                 <UncontrolledAccordion
                     // accordionCollapsed={accordionCollapsed}
                     //                    setAccordionCollapsed={dispatch}
@@ -54,6 +56,7 @@ function App() {
                 <ColorButtons/>
                 <Input/>
                 <Select selectItems={selectItems}/>
+
             </div>
 
             <div className={s.Footer}>
