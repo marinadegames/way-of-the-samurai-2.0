@@ -29,7 +29,7 @@ export const Select = function ({selectItems, ...props}: SelectPropsType) {
         <div className={!stateSelectMenu ? s.selectBoxClose : s.selectBoxOpen}
              onClick={() => openSelectMenu()}>
             <div className={s.titleSelect}>{titleSelect}</div>
-            <div className={stateSelectMenu ? s.openSelectItems : s.closeSelectItems}>
+            <div className={stateSelectMenu ? `${s.openSelectItems} animate__animated animate__fadeInUp` : s.closeSelectItems}>
                 {selectItems.map((i) => {
                     return (
                         <div className={i.title === titleSelect ? s.itemSelectActive : s.itemSelect }

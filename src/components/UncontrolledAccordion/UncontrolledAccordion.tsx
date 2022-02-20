@@ -1,13 +1,13 @@
 //imports
-import React, {useReducer} from "react";
+import React, {useReducer, useState} from "react";
 import s from './UncontrolledAccordion.module.css'
 import {ItemsMenuType} from "../../App";
+import 'animate.css';
+
 
 //types
 export type UncontrolledAccordionPropsType = {
     title: string
-    // setAccordionCollapsed: (dispatch: boolean) => void
-    // accordionCollapsed: boolean
     itemsMenu: Array<ItemsMenuType>,
 }
 type AccordionTitlePropsType = {
@@ -39,21 +39,23 @@ const reducer = (state: boolean, action: actionType) => {
 export function UncontrolledAccordion(
     {
         title,
-        // accordionCollapsed,
-        // setAccordionCollapsed,
         itemsMenu,
         ...props
     }: UncontrolledAccordionPropsType) {
 
     let [accordionCollapsed, dispatch] = useReducer(reducer, false)
 
+    const [inProp, setInProp] = useState(false);
 
     return (
         <div className={s.accordion}>
             <AccordionTitle title={title}
                             onClick={() => dispatch({type: 'TOGGLE-COLLAPSED'})}/>
-            <AccordionBody accordionCollapsed={accordionCollapsed}
-                           itemsMenu={itemsMenu}/>
+
+
+                <AccordionBody accordionCollapsed={accordionCollapsed}
+                               itemsMenu={itemsMenu}/>
+
         </div>
     )
 }
@@ -67,7 +69,7 @@ function AccordionTitle({title, onClick, ...props}: AccordionTitlePropsType) {
 
     return (
         <h3 onClick={titleMenuClick}
-            className={s.accordionTitle}>{title}</h3>
+            className={`${s.accordionTitle}`}>{title}</h3>
     )
 }
 
@@ -75,7 +77,7 @@ function AccordionBody(props: AccordionBodyPropsType) {
 
     if (props.accordionCollapsed) {
         return (
-            <div className={s.menu}>
+            <div className={`${s.menu} animate__animated animate__fadeIn`}>
                 {props.itemsMenu.map((i: ItemsMenuType) => {
                     return (
                         <li key={i.id}>
