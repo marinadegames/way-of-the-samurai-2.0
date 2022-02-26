@@ -4,7 +4,6 @@ export default {
     title: 'useEffect demo'
 }
 
-
 export const SimpleExample = () => {
 
     const [fake, setFake] = useState<number>(1)
@@ -20,7 +19,7 @@ export const SimpleExample = () => {
     useEffect(() => {
         // console.log('useEffect only first render')
         document.title = counter.toString()
-    }, [])
+    }, [counter])
 
     useEffect(() => {
         // console.log('useEffect first render and every counter change')
@@ -47,11 +46,11 @@ export const SetTimeoutExample = () => {
     useEffect(() => {
 
         setInterval(() => {
-            console.log('tick ' + counter)
+            // console.log('tick ' + counter)
             setCounter(counter + 1)
         }, 1000)
 
-    }, [])
+    }, [counter])
 
 
     return (
@@ -63,17 +62,19 @@ export const SetTimeoutExample = () => {
     )
 
 }
-
-
 export const ResetEffectExample = () => {
     const [counter, setCounter] = useState<number>(1)
 
-
-    console.log('SetTimeoutExample')
+    console.log('COMPONENT RENDERED!')
 
     useEffect(() => {
         console.log('Effect occurred!')
-    })
+
+        return () => {
+            console.log('RESET EFFECT')
+        }
+
+    }, [])
 
 
     return (
@@ -87,4 +88,30 @@ export const ResetEffectExample = () => {
     )
 
 }
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState<string>('')
 
+    console.log('COMPONENT RENDERED WITH ' + text)
+
+    useEffect(() => {
+        const handler = (e: KeyboardEvent) => {
+            console.log(e.key)
+            setText(text + e.key)
+        }
+
+
+        window.addEventListener('keypress', handler)
+
+        return () => {
+            window.removeEventListener('keypress', handler)
+        }
+    }, [text])
+
+
+    return (
+        <>
+            Typed text: {text}
+        </>
+    )
+
+}
