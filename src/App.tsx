@@ -18,15 +18,13 @@ function App() {
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
     let [switchOn, setSwitchOn] = useState(false)
-    // let [accordionCollapsed, setAccordionCollapsed] = useState(false)
 
-
-    const [itemsMenu, setItemsMenu] = useState<Array<ItemsMenuType>>([
+    const itemsMenu = [
         {id: v1(), title: 'HTML&CSS'},
         {id: v1(), title: 'JavaScript'},
         {id: v1(), title: 'React'},
         {id: v1(), title: 'Redux'},
-    ])
+    ]
 
     const selectItems = [
         {id: v1(), title: 'HTML'},
@@ -40,7 +38,8 @@ function App() {
 
             <div className={s.Header}>
                 <h3>Header</h3>
-                <Clock/>
+                <Clock mode={'analog'}/>
+                <Clock mode={'digital'}/>
                 <UncontrolledAccordion
                     // accordionCollapsed={accordionCollapsed}
                     //                    setAccordionCollapsed={dispatch}

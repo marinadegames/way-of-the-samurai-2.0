@@ -37,8 +37,6 @@ export const SimpleExample = () => {
     )
 
 }
-
-
 export const SetTimeoutExample = () => {
 
     const [fake, setFake] = useState<number>(1)
@@ -48,14 +46,12 @@ export const SetTimeoutExample = () => {
 
     useEffect(() => {
 
-        setInterval( () => {
+        setInterval(() => {
             console.log('tick ' + counter)
             setCounter(counter + 1)
         }, 1000)
 
     }, [])
-
-
 
 
     return (
@@ -68,4 +64,27 @@ export const SetTimeoutExample = () => {
 
 }
 
+
+export const ResetEffectExample = () => {
+    const [counter, setCounter] = useState<number>(1)
+
+
+    console.log('SetTimeoutExample')
+
+    useEffect(() => {
+        console.log('Effect occurred!')
+    })
+
+
+    return (
+        <>
+            HELLO, counter: {counter}
+            <button onClick={() => {
+                setCounter(counter + 1)
+            }}>+
+            </button>
+        </>
+    )
+
+}
 

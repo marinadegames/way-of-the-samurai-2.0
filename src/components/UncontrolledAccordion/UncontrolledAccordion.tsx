@@ -1,5 +1,5 @@
 //imports
-import React, {useReducer, useState} from "react";
+import React, {useReducer} from "react";
 import s from './UncontrolledAccordion.module.css'
 import {ItemsMenuType} from "../../App";
 import 'animate.css';
@@ -44,8 +44,6 @@ export function UncontrolledAccordion(
     }: UncontrolledAccordionPropsType) {
 
     let [accordionCollapsed, dispatch] = useReducer(reducer, false)
-
-    const [inProp, setInProp] = useState(false);
 
     return (
         <div className={s.accordion}>

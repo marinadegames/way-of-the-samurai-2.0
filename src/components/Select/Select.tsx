@@ -11,8 +11,6 @@ export type SelectPropsType = {
     selectItems: Array<selectItemType>
 }
 
-// assets
-
 //components
 export const Select = function ({selectItems, ...props}: SelectPropsType) {
 
